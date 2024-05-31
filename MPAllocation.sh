@@ -5,7 +5,7 @@ Disk_Label="Name of disk being expanded"
 MP="/mnt/location"
 Part_Number="number associated with partition being resized" 
 
-#Unmount the file system as it is not a root drive
+#Unmount the file system as it is not the root drive
 umount $MP
 
 # resize the file system 
@@ -18,7 +18,6 @@ e2fsck -f /dev/$Disk_Label
 resize2fs /dev/$Disk_Label
 
 # Remount the file system 
-
 mount /dev/$Disk_Label $MP
 
 echo "The volume allocation has successfully completed." 
